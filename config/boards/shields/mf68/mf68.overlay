@@ -1,7 +1,11 @@
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "mf68-layouts.dtsi"
 
-
+&physical_layout0 {
+    kscan = <&kscan0>; // Label of the kscan node this layout uses
+    transform = <&default_transform>; // Label of the matrix transform this layout uses
+};
 
 / {
     chosen {
@@ -30,32 +34,31 @@
     };
 
 
-    kscan: kscan {
+    kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
         diode-direction = "col2row";
 
-        row-gpios = <&pro_micro 10 (GPIO_ACTIVE_LOW)>,  /* Pro Micro B6 -> P0.10 */
-                    <&pro_micro 16 (GPIO_ACTIVE_LOW)>,  /* Pro Micro B2 -> P0.11 */
-                    <&pro_micro 14 (GPIO_ACTIVE_LOW)>,  /* Pro Micro B3 -> P0.12 */
-                    <&pro_micro 15 (GPIO_ACTIVE_LOW)>,  /* Pro Micro B1 -> P0.13 */
-                    <&pro_micro 18 (GPIO_ACTIVE_LOW)>,  /* Pro Micro F7 -> P0.14 */
-                    <&pro_micro 19 (GPIO_ACTIVE_LOW)>,  /* Pro Micro F6 -> P0.15 */
-                    <&pro_micro 20 (GPIO_ACTIVE_LOW)>,  /* Pro Micro F3 -> P0.16 */
-                    <&pro_micro 21 (GPIO_ACTIVE_LOW)>;  /* Pro Micro F4 -> P0.17 */
+        row-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro B6 -> P0.10 */
+                    <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro B2 -> P0.11 */
+                    <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro B3 -> P0.12 */
+                    <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro B1 -> P0.13 */
+                    <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro F7 -> P0.14 */
+                    <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro F6 -> P0.15 */
+                    <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* Pro Micro F3 -> P0.16 */
+                    <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  /* Pro Micro F4 -> P0.17 */
 
-        col-gpios = <&pro_micro 1  (GPIO_ACTIVE_LOW)>,  /* Pro Micro D3 -> P0.02 */
-                    <&pro_micro 0  (GPIO_ACTIVE_LOW)>,  /* Pro Micro D2 -> P0.03 */
-                    <&pro_micro 2  (GPIO_ACTIVE_LOW)>, /* Pro Micro D1 -> P0.28 */
-                    <&pro_micro 3  (GPIO_ACTIVE_LOW)>, /* Pro Micro D0 -> P0.29 */
-                    <&pro_micro 4  (GPIO_ACTIVE_LOW)>, /* Pro Micro D4 -> P0.30 */
-                    <&pro_micro 5  (GPIO_ACTIVE_LOW)>, /* Pro Micro C6 -> P0.31 */
-                    <&pro_micro 6  (GPIO_ACTIVE_LOW)>,  /* Pro Micro D7 -> P1.02 */
-                    <&pro_micro 7  (GPIO_ACTIVE_LOW)>,  /* Pro Micro E6 -> P1.04 */
-                    <&pro_micro 8  (GPIO_ACTIVE_LOW)>;  /* Pro Micro B4 -> P1.06 */
+        col-gpios = <&pro_micro 1  (GPIO_ACTIVE_HIGH)>,  /* Pro Micro D3 -> P0.02 */
+                    <&pro_micro 0  (GPIO_ACTIVE_HIGH)>,  /* Pro Micro D2 -> P0.03 */
+                    <&pro_micro 2  (GPIO_ACTIVE_HIGH)>, /* Pro Micro D1 -> P0.28 */
+                    <&pro_micro 3  (GPIO_ACTIVE_HIGH)>, /* Pro Micro D0 -> P0.29 */
+                    <&pro_micro 4  (GPIO_ACTIVE_HIGH)>, /* Pro Micro D4 -> P0.30 */
+                    <&pro_micro 5  (GPIO_ACTIVE_HIGH)>, /* Pro Micro C6 -> P0.31 */
+                    <&pro_micro 6  (GPIO_ACTIVE_HIGH)>,  /* Pro Micro D7 -> P1.02 */
+                    <&pro_micro 7  (GPIO_ACTIVE_HIGH)>,  /* Pro Micro E6 -> P1.04 */
+                    <&pro_micro 8  (GPIO_ACTIVE_HIGH)>;  /* Pro Micro B4 -> P1.06 */
     };
 
-    transform: matrix_transform {
+    default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         rows = <5>;
         columns = <16>;
