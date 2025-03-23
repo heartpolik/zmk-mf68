@@ -20,4 +20,4 @@
             gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
         };
     };
-}
+};
