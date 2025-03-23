@@ -37,5 +37,11 @@
   &kp RCTRL  &kp L   &kp D   &kp R
             >;
         };
+        fn_layer {
+
+        };
+        config_layer {
+
+        };
     };
 };
