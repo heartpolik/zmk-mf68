@@ -38,10 +38,22 @@
             >;
         };
         fn_layer {
-
+            bindings = <
+            &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none 
+            &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none 
+            &none &none &none &none &none &none &none &none &none &none &none &none &none
+            &none &none &none &none &none &none &none &none &none &none &none &none &none
+            &none &none &none &none &none &none &none &none &none &none
+            >;
         };
         config_layer {
-
+            bindings = <
+            &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none 
+            &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none 
+            &none &none &none &none &none &none &none &none &none &none &none &none &none
+            &none &none &none &none &none &none &none &none &none &none &none &none &none
+            &none &none &none &none &none &none &none &none &none &none
+            >;
         };
     };
 };
