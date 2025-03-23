@@ -23,7 +23,9 @@
 
         main {
             display-name = "Main";
-            bindings = <>;
+            bindings = <
+              &kp A 
+            >;
         };
     };
 };
