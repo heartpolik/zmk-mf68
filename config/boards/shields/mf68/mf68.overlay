@@ -2,10 +2,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "mf68-layouts.dtsi"
 
-&physical_layout0 {
-    kscan = <&kscan0>; // Label of the kscan node this layout uses
-    transform = <&keymap_transform0>; // Label of the matrix transform this layout uses
-};
+
 
 / {
     
@@ -54,7 +51,7 @@
                     <&pro_micro 8  (GPIO_ACTIVE_HIGH)>;  /* Pro Micro B4 -> P1.06 */
     };
 
-    default_transform: keymap_transform0 {
+    default_transform: default_transform {
         compatible = "zmk,matrix-transform";
         rows = <5>;
         columns = <16>;
