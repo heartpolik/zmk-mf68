@@ -10,8 +10,8 @@
 / {
     
     aliases {
-        led-red = &led1;
-        led-green = &led0;
+        led-red = &led0;
+        led-green = &led1;
         led-blue = &led2;
     };
 
